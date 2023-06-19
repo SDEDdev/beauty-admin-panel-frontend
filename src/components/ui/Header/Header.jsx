@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     const [isOpen, setOpen] = useState(false);
-    const isUser = false;
+    const isUser = true;
 
     const handleClickNavMenu = () => {
         setOpen(isOpen => !isOpen);
@@ -46,7 +46,13 @@ const Header = () => {
                                 {
                                     !isUser &&
                                     <>
-                                        <Link onClick={handleClickNavMenu} className='flex items-center w-full py-4 px-6 bg-white text-[22px] rounded-full' to={"account/login"}><FiUser className='mr-[8px]' /> Вхід</Link>
+                                        <Link onClick={handleClickNavMenu} className='flex items-center w-full py-4 px-6 bg-white text-[22px] rounded-full' to={"account/login"}><FiUser className='mr-[8px]' />Вхід</Link>
+                                    </>
+                                }
+                                {
+                                    isUser &&
+                                    <>
+                                        <Link onClick={handleClickNavMenu} className='flex items-center w-full py-4 px-6 bg-white text-[22px] rounded-full' to={"calendar"}><FiUser className='mr-[8px]' />Робочий графік</Link>
                                     </>
                                 }
                             </div>

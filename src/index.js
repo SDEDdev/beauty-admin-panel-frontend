@@ -8,6 +8,8 @@ import store from './redux/store';
 
 import RootLauout from './components/layout/RootLauout';
 import Login from './pages/Login';
+import Calendar from './pages/Calendar';
+import axios from 'axios';
 
 const router = createBrowserRouter([
   {
@@ -19,14 +21,14 @@ const router = createBrowserRouter([
         element: <Login />,
       },
       {
-        path: "/admin",
-        element: <div>admin</div>,
+        path: "/calendar",
+        element: <Calendar />,
       }
     ],
   },
-
-
 ]);
+
+axios.defaults.baseURL = process.env.API_BACKEND || 'http://127.0.0.1:3000';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

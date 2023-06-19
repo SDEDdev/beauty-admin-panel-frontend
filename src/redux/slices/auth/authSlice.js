@@ -8,7 +8,7 @@ const userToken = localStorage.getItem('userToken')
 const initialState = {
     loading: false,
     userInfo: {}, // for user object
-    userToken: null, // for storing the JWT
+    userToken: userToken, // for storing the JWT
     error: null,
     success: false, // for monitoring the registration process.
 }
